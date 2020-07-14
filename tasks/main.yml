@@ -20,6 +20,19 @@
     theia_ide_workspace: "{{ ansible_env.PWD }}"
   when: theia_ide_workspace is not defined
 
+- name: Create Theia directories
+  file:
+    path: "{{item}}"
+    state: directory
+    recurse: True
+    owner: "{{ansible_user_id}}"
+    group: "{{ansible_user_gid}}"
+    mode: 0755
+  with_items:
+    - "{{theia_package_json.theiaPluginsDir}}"
+    - "{{theia_ide_workspace}}"
+    - "{{theia_ide_dir}}/extensions"
+
 - name: Install nvm
   shell: |
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | NVM_DIR={{ nvm_install_dir }} /bin/bash
