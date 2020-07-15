@@ -29,9 +29,7 @@
     group: "{{ansible_user_gid}}"
     mode: 0755
   with_items:
-    - "{{theia_package_json.theiaPluginsDir}}"
     - "{{theia_ide_workspace}}"
-    - "{{theia_ide_dir}}/extensions"
 
 - name: Install nvm
   shell: |
