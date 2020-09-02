@@ -70,7 +70,7 @@
   shell: |
         source {{ nvm_install_dir }}/nvm.sh
         yarn
-        yarn theia build
+        NODE_OPTIONS="--max_old_space_size=2048" yarn theia build
   args:
     chdir: "{{ theia_ide_install_dir }}"
     executable: bash

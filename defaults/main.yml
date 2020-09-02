@@ -12,7 +12,7 @@ theia_package_json:
         "@theia/callhierarchy": "next"
         "@theia/file-search": "next"
         "@theia/git": "next"
-        "@theia/json": "next"
+        #"@theia/json": "next"
         "@theia/markers": "next"
         "@theia/messages": "next"
         "@theia/mini-browser": "next"
